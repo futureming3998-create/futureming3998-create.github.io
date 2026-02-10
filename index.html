@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨境出口法律实务 | 制造业出海合规</title>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+    <style>
+        :root { --brand-blue: #003366; --gold-accent: #c5a059; --bg-gray: #f8f9fa; }
+        body { font-family: 'Times New Roman', serif, 'PingFang SC'; line-height: 1.8; color: #333; max-width: 950px; margin: 0 auto; padding: 40px 20px; background-color: var(--bg-gray); }
+        header { text-align: left; padding: 40px; background: var(--brand-blue); color: white; border-radius: 12px 12px 0 0; }
+        .post-card { background: white; padding: 45px; border-radius: 0 0 12px 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        h1 { margin: 0; font-size: 2.4em; }
+        .tagline { color: var(--gold-accent); font-weight: bold; margin-top: 10px; }
+        .legal-content h2 { border-left: 6px solid var(--gold-accent); padding-left: 15px; margin: 40px 0 20px; color: var(--brand-blue); }
+        .risk-alert { background: #fff5f5; padding: 25px; border: 1px dashed #e03131; border-radius: 8px; margin: 25px 0; }
+        .risk-alert strong { color: #e03131; }
+        #waline { margin-top: 60px; border-top: 1px solid #eee; padding-top: 40px; }
+        .contact-bar { background: var(--brand-blue); color: white; padding: 15px; text-align: center; border-radius: 8px; margin-top: 40px; }
+    </style>
+</head>
+<body>
 
+<header>
+    <h1>制造业出口法律实务</h1>
+    <div class="tagline">Global Trade Compliance & Legal Risk Management</div>
+</header>
+
+<main class="post-card">
+    <article class="legal-content">
+        <h1>避坑指南：制造业出口合同中容易被忽视的 3 个“国际陷阱”</h1>
+        <p class="meta" style="color:#999;">发布日期：2026-02-10 | 分类：国际贸易合规</p>
+
+        <p>随着全球供应链格局的调整，中国制造业在“走出去”的过程中，面临的法律环境日益复杂。一份草率的出口合同，可能导致货款两空。以下是近期频发的风险点分析：</p>
+
+        <h2>1. 国际贸易术语（Incoterms）的误用</h2>
+        <p>很多厂家习惯用 FOB 价格，但在实际操作中，如果对“风险转移界限”理解不准，在海运费用飙升或港口罢工时，往往会陷入索赔僵局。</p>
+
+        <div class="risk-alert">
+            <strong>⚠️ 风险警示：</strong> 务必在合同中明确具体版本的 Incoterms（如 2020 版），并核实买方指定的货代是否有国内服务网点。
+        </div>
+
+        <h2>2. 知识产权“反向侵权”风险</h2>
+        <p>制造业出口常见的坑：根据外商提供的图纸生产，结果在目的国被指控侵犯专利。如果合同中没有明确的“知识产权担保条款”，工厂可能要承担巨额赔偿。</p>
+
+        <h2>3. 争议解决条款：别让官司打到国外</h2>
+        <p>如果约定在买方所在地法院起诉，高昂的跨境律师费和语言障碍可能让维权成本超过货值。建议优先选择：</p>
+        <ul>
+            <li>中国国际经济贸易仲裁委员会 (CIETAC) 仲裁</li>
+            <li>或者选择中立地（如新加坡/香港）仲裁</li>
+        </ul>
+    </article>
+
+    <div class="contact-bar">
+        ✉️ 商务咨询：your-email@example.com | 跨境合规专项法律顾问
+    </div>
+
+    <div id="waline"></div>
+</main>
+
+<script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+    init({
+      el: '#waline',
+      serverURL: '', // 下一步我们将配置这里
+      placeholder: '欢迎外贸企业负责人留言咨询跨境合规问题...',
+    });
+</script>
+
+</body>
+</html>
