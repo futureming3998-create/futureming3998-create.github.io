@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>制造业全球化布局 | 出海法务对冲策略</title>
-    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
     <style>
         :root { --legal-navy: #1a2a3a; --gold: #b8860b; --soft-gray: #f4f4f4; }
-        body { font-family: 'Georgia', serif, 'PingFang SC'; line-height: 1.8; color: #2c3e50; max-width: 900px; margin: 0 auto; padding: 50px 20px; background-color: var(--soft-gray); }
-        header { border-left: 8px solid var(--gold); padding: 20px 40px; background: var(--legal-navy); color: white; margin-bottom: 40px; }
-        .container { background: white; padding: 50px; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        h1 { font-size: 2.2em; letter-spacing: 1px; color: var(--legal-navy); margin-top: 0; }
+        body { font-family: 'Georgia', serif, 'PingFang SC'; line-height: 1.8; color: #2c3e50; margin: 0; background-color: var(--soft-gray); }
+        
+        /* 布局容器 */
+        .wrapper { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 30px; padding: 40px 20px; }
+        
+        header { grid-column: 1 / -1; border-left: 8px solid var(--gold); padding: 20px 40px; background: var(--legal-navy); color: white; margin-bottom: 10px; }
+        
+        /* 主栏文章内容 */
+        .main-content { background: white; padding: 40px; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        
+        /* 侧边栏样式 */
+        .sidebar { background: white; padding: 30px; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); height: fit-content; border-top: 4px solid var(--gold); }
+        .profile-img { width: 100px; height: 100px; background: #eee; border-radius: 50%; margin: 0 auto 20px; display: block; object-fit: cover; border: 2px solid var(--gold); }
+        .sidebar h3 { font-size: 1.2em; color: var(--legal-navy); text-align: center; margin-bottom: 5px; }
+        .sidebar p { font-size: 0.9em; color: #666; line-height: 1.6; }
+        .contact-btn { display: block; text-align: center; background: var(--legal-navy); color: white; padding: 10px; text-decoration: none; border-radius: 4px; margin-top: 20px; font-size: 0.9em; }
+
+        /* 文章样式 */
+        h1 { font-size: 2em; color: var(--legal-navy); margin-top: 0; }
         h2 { font-size: 1.4em; border-bottom: 1px solid #eee; padding-bottom: 10px; color: var(--gold); margin-top: 40px; }
-        .abstract { font-style: italic; color: #666; border: 1px solid #eee; padding: 20px; margin: 20px 0; background: #fafafa; }
-        .insight-box { background: #fff; border: 1px solid var(--legal-navy); padding: 25px; position: relative; margin: 30px 0; }
-        .insight-box::before { content: "INDEPENDENT INSIGHT"; position: absolute; top: -10px; left: 20px; background: var(--legal-navy); color: white; font-size: 10px; padding: 2px 8px; }
-        #waline { margin-top: 60px; }
-        .footer { text-align: center; padding: 40px 0; font-size: 0.8em; color: #999; }
+        .insight-box { background: #fff; border: 1px solid var(--legal-navy); padding: 20px; position: relative; margin: 30px 0; font-size: 0.95em; }
+        
+        #giscus-container { margin-top: 50px; border-top: 1px solid #eee; padding-top: 30px; }
+
+        @media (max-width: 850px) { .wrapper { grid-template-columns: 1fr; } .sidebar { order: -1; } }
     </style>
 </head>
 <body>
@@ -26,44 +40,43 @@
     <div style="font-size: 1.5em; font-weight: bold;">制造业出海法盾</div>
 </header>
 
-<div class="container">
-    <article>
-        <h1>制造业全球化布局：出口合同中的高阶风险对冲策略</h1>
-        <div style="color: #999; margin-bottom: 20px;">Issue 2026.02 · 国际贸易实务部</div>
+<div class="wrapper">
+    <main class="main-content">
+        <article>
+            <h1>制造业全球化布局：出口合同中的高阶风险对冲策略</h1>
+            <div style="color: #999; margin-bottom: 20px; font-size: 0.9em;">Issue 2026.02 · 国际贸易实务部</div>
 
-        <p class="abstract">
-            <strong>摘要：</strong>在全球供应链深度重构的当下，中国制造的竞争边界已从单纯的“产能博弈”转向“规则博弈”。本文旨在探讨复杂地缘环境下，出口企业如何通过合同条款的精密设计，实现法律风险与商业利润的有效对冲。
-        </p>
+            <p>在全球供应链深度重构的当下，中国制造的竞争边界已从单纯的“产能博弈”转向“规则博弈”...</p>
 
-        <h2>一、 贸易术语的金融属性与风险穿透</h2>
-        <p>Incoterms 2020 规则不应仅被视为价格构成，更应视为风险所有权的切换节点。在高通胀与物流波动周期内，传统的 FOB 模式往往让出口方在目的国滞港费与转运风险中处于防御弱势。<strong>建议方案：</strong>引入差异化条款，针对地缘政治导致的不可抗力，建立成本分摊的动态对冲机制。</p>
+            <h2>一、 贸易术语的金融属性与风险穿透</h2>
+            <p>Incoterms 2020 规则不应仅被视为价格构成，更应视为风险所有权的切换节点...</p>
 
-        <h2>二、 知识产权的“前置防御”与跨国侵权豁免</h2>
-        <p>OEM/ODM 模式下，企业核心风险在于外商图纸的侵权联带责任。单纯的口头保证无法对抗目的国法律的强行介入。企业须通过“知识产权反向保障协议”，明确界定侵权赔偿的追偿路径，将法律成本在合同签署阶段完成市场化定价。</p>
+            <div class="insight-box">
+                <strong>核心洞察：</strong>争议解决路径的选择，本质上是企业维权成本的折现。建议优先选择新加坡（SIAC）或香港（HKIAC）仲裁。
+            </div>
+            
+            <p>（此处继续保留你的深度内容...）</p>
+        </article>
 
-        <div class="insight-box">
-            <strong>核心洞察：</strong>争议解决路径（Dispute Resolution）的选择，本质上是企业维权成本的折现。建议优先选择新加坡（SIAC）或香港（HKIAC）仲裁，以利用其高效的跨国判决执行力，规避异地司法壁垒。
-        </div>
+        <div id="giscus-container">
+            </div>
+    </main>
 
-        <h2>三、 复杂供应链环境下的合同“软条款”识别</h2>
-        <p>重点关注买方信用证中的单据软条款及收货确认权的滥用。通过法律技术手段，将“事实交付”转化为“法理交付”，是确保制造业出口收汇安全的核心屏障。</p>
-    </article>
+    <aside class="sidebar">
+        <img src="https://ui-avatars.com/api/?name=Lawyer&background=1a2a3a&color=fff" alt="律师简介" class="profile-img">
+        <h3>专业律师团队</h3>
+        <p style="text-align: center; color: var(--gold); font-weight: bold;">跨境贸易与合规专家</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+        <p><strong>业务领域：</strong><br>专注于制造业出口合规、国际信用证纠纷、跨境商事仲裁及海外知识产权保护。</p>
+        <p><strong>执业背景：</strong><br>深耕涉外法律服务10余年，曾协助多家大型制造企业搭建全球供应链风控体系，涉案金额累计超10亿元。</p>
+        <a href="mailto:your-email@example.com" class="contact-btn">发送咨询邮件</a>
+        <p style="font-size: 0.8em; text-align: center; margin-top: 15px;">坐标：中国 · 上海/深圳</p>
+    </aside>
+</div>
 
-<script src="https://giscus.app/client.js"
-        data-repo="futureming3998-create/futureming3998-create.github.io"
-        data-repo-id="R_kgDORMqXOw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDORMqXO84C2H4f"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>
+<footer style="text-align: center; padding: 40px 0; font-size: 0.8em; color: #999;">
+    © 2026 Futureming Global Legal Insight | Powered by GitHub Pages
+</footer>
 
 </body>
 </html>
