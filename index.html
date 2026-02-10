@@ -6,10 +6,10 @@
     <title>制造业全球化布局 | 出海法务对冲策略</title>
     <style>
         :root { 
-            --legal-navy: #0a192f; /* 权威深蓝 */
-            --gold: #9d845e;       /* 哑光金 */
-            --text-main: #2c3e50;
-            --bg-soft: #fcfcfc;
+            --ocean-blue: #0f203d; /* 深海蓝：比纯黑更灵动，比浅蓝更稳重 */
+            --gold: #b89a6b;       /* 哑光金：高贵而不刺眼 */
+            --text-main: #34495e;  /* 深蓝灰色：缓解纯黑的压抑感 */
+            --bg-light: #f5f7fa;   /* 极浅蓝灰背景 */
         }
         
         body { 
@@ -17,139 +17,141 @@
             line-height: 1.85; 
             color: var(--text-main); 
             margin: 0; 
-            background-color: var(--bg-soft); 
+            background-color: var(--bg-light); 
         }
 
-        /* 极致呼吸感的布局 */
+        /* 顶部深海蓝 Header */
+        header { 
+            background: var(--ocean-blue); 
+            padding: 40px 0; 
+            border-bottom: 4px solid var(--gold);
+            text-align: center;
+        }
+        .site-title { 
+            font-size: 1.8em; 
+            letter-spacing: 3px; 
+            color: #ffffff; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .site-subtitle {
+            color: var(--gold);
+            font-size: 0.9em;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
         .wrapper { 
             max-width: 1100px; 
             margin: 0 auto; 
             display: grid; 
             grid-template-columns: 1fr 300px; 
-            gap: 60px; 
-            padding: 80px 20px; 
+            gap: 50px; 
+            padding: 60px 20px; 
         }
 
-        header { 
-            grid-column: 1 / -1; 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 30px; 
-            margin-bottom: 20px;
-        }
-        .site-title { 
-            font-size: 1.8em; 
-            letter-spacing: 2px; 
-            color: var(--legal-navy); 
-            font-weight: bold; 
-            text-transform: uppercase;
-        }
-
-        /* 律所内参风格正文 */
+        /* 正文区域样式优化 */
         .main-content { 
             background: white; 
             padding: 50px 60px; 
-            border: 1px solid #eee; 
-            border-radius: 2px;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(15, 32, 61, 0.05); /* 淡淡的蓝影 */
         }
 
         h1 { 
             font-size: 2.2em; 
             line-height: 1.4; 
-            color: var(--legal-navy); 
-            margin: 0 0 10px 0; 
+            color: var(--ocean-blue); 
+            margin-bottom: 15px;
         }
 
         .meta-info { 
-            font-size: 0.9em; 
+            font-size: 0.85em; 
             color: var(--gold); 
+            font-weight: bold;
             text-transform: uppercase; 
-            letter-spacing: 1px; 
+            border-left: 3px solid var(--gold);
+            padding-left: 10px;
             margin-bottom: 40px;
-            border-bottom: 2px solid var(--gold);
-            display: inline-block;
         }
 
         h2 { 
-            font-size: 1.3em; 
-            color: var(--legal-navy); 
+            font-size: 1.35em; 
+            color: var(--ocean-blue); 
             margin-top: 50px; 
-            display: flex; 
-            align-items: center; 
-        }
-        h2::before { 
-            content: ""; 
-            width: 25px; 
-            height: 2px; 
-            background: var(--gold); 
-            margin-right: 15px; 
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
         }
 
+        /* 法律内参 Highlight Box */
         .insight-box { 
-            background: #f8f9fa; 
-            border-left: 3px solid var(--gold); 
+            background: #f0f4f8; 
+            border-left: 4px solid var(--ocean-blue); 
             padding: 25px 30px; 
             margin: 35px 0; 
             font-style: italic; 
-            font-size: 0.95em;
-            color: #444;
+            color: #2c3e50;
         }
 
-        ul { padding-left: 18px; }
-        li { margin-bottom: 12px; }
-        li strong { color: var(--legal-navy); }
+        ul li strong { color: var(--ocean-blue); }
 
-        /* 侧边栏：名片化 */
+        /* 侧边栏 */
         .sidebar { 
             background: white; 
             padding: 35px 25px; 
-            border: 1px solid #eee; 
+            border-radius: 4px;
             height: fit-content; 
             position: sticky; 
             top: 40px;
+            border-top: 5px solid var(--ocean-blue);
         }
         .profile-img { 
-            width: 90px; height: 90px; 
+            width: 100px; height: 100px; 
             border-radius: 50%; 
             margin: 0 auto 20px; 
             display: block; 
-            border: 1px solid #eee;
+            border: 2px solid var(--bg-light);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .sidebar h3 { font-size: 1.1em; color: var(--legal-navy); text-align: center; margin-bottom: 5px; }
-        .sidebar p { font-size: 0.88em; color: #555; line-height: 1.7; }
+        .sidebar h3 { font-size: 1.2em; color: var(--ocean-blue); text-align: center; }
+        
         .contact-btn { 
             display: block; text-align: center; 
-            background: var(--legal-navy); color: white; 
-            padding: 12px; text-decoration: none; 
-            margin-top: 25px; font-size: 0.85em; 
-            transition: 0.3s;
+            background: var(--ocean-blue); color: white; 
+            padding: 14px; text-decoration: none; 
+            border-radius: 4px;
+            margin-top: 25px; font-weight: bold;
+            transition: all 0.3s;
         }
-        .contact-btn:hover { background: var(--gold); }
+        .contact-btn:hover { background: var(--gold); transform: translateY(-2px); }
 
-        #giscus-container { margin-top: 60px; padding-top: 40px; border-top: 1px dotted #ccc; }
+        #giscus-container { margin-top: 60px; padding-top: 40px; }
 
         @media (max-width: 850px) { 
-            .wrapper { grid-template-columns: 1fr; padding: 40px 15px; } 
-            .main-content { padding: 30px 25px; }
+            .wrapper { grid-template-columns: 1fr; } 
+            .main-content { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-<header class="wrapper" style="padding: 40px 20px 0;">
-    <div class="site-title">Global Legal Insight</div>
+<header>
+    <h1 class="site-title">Global Legal Insight</h1>
+    <div class="site-subtitle">制造业出海法盾 · 跨境风控决策内参</div>
 </header>
 
 <div class="wrapper">
     <main class="main-content">
         <article>
             <h1>制造业全球化布局：出口合同中的高阶风险对冲策略</h1>
-            <div class="meta-info">B2B Manufacturing Focus · 2026 ISSUE</div>
+            <div class="meta-info">2026 February · B2B Special Report</div>
 
-            <p>在复杂的全球博弈环境下，中国 B2B 制造企业的竞争核心已从“产能”转向“规则”。合同不再仅仅是交易凭证，而是保护资产安全的最后一道防线。</p>
+            <p>在复杂的全球博弈环境下，中国 B2B 制造企业的竞争核心已从“产能”转向“规则”。合同不仅是交易凭证，更是保护资产安全的最后防线。</p>
 
             <h2>一、 贸易术语的金融属性与风险穿透</h2>
             <div class="insight-box">
-                <strong>核心风险点：</strong>FOB 模式下买方指定货代易导致“无单放货”。建议 B2B 企业在波动的市场环境优先考虑 CIF 术语以掌握物权凭证。
+                <strong>深度风险点：</strong>FOB 模式下买方指定货代易导致“无单放货”。建议 B2B 企业在波动的市场环境优先考虑 CIF 术语以掌控物权凭证。
             </div>
             <ul>
                 <li><strong>所有权保留：</strong> 明确货款全额到账前，货物法律所有权不发生转移。</li>
@@ -159,20 +161,20 @@
             <h2>二、 OEM/ODM 模式下的知识产权“防火墙”</h2>
             <p>B2B 工厂常被作为侵权诉讼的第一被告。需通过合同条款实现责任的彻底隔离。</p>
             <ul>
-                <li><strong>反向追偿：</strong> 约定买方须就其图纸合法性出具独立赔偿担保，确保工厂免责。</li>
-                <li><strong>模具确权：</strong> 严格约定模具所有权及摊销逻辑，防止订单被恶意转移。</li>
+                <li><strong>反向追偿：</strong> 约定买方须就图纸合法性出具独立赔偿担保。</li>
+                <li><strong>模具确权：</strong> 严格约定模具所有权及摊销逻辑，防止订单流失。</li>
             </ul>
 
             <h2>三、 B2B 跨境账款的“深水区”维权</h2>
-            <p>对于 B2B 企业，时间成本等同于资产减值。必须建立全球可执行的裁决路径。</p>
+            <p>时间成本等同于资产减值。必须建立全球可执行的裁决路径。</p>
             <ul>
-                <li><strong>仲裁效力：</strong> 锁定 HKIAC 等国际仲裁，利用《纽约公约》在 170+ 国家强制执行。</li>
+                <li><strong>仲裁效力：</strong> 锁定 HKIAC 等国际仲裁，利用《纽约公约》强制执行。</li>
                 <li><strong>中立管辖：</strong> 坚持第三方中立裁决，拒绝买方本国司法管辖。</li>
             </ul>
         </article>
 
         <div id="giscus-container">
-            <script src="https://giscus.app/client.js"
+             <script src="https://giscus.app/client.js"
                 data-repo="futureming3998-create/futureming3998-create.github.io"
                 data-repo-id="R_kgDORMqXO8"
                 data-category="Announcements"
@@ -191,17 +193,16 @@
     </main>
 
     <aside class="sidebar">
-        <img src="https://ui-avatars.com/api/?name=Lawyer+Lu&background=0a192f&color=fff" alt="律师简介" class="profile-img">
+        <img src="https://ui-avatars.com/api/?name=Lawyer+Lu&background=0f203d&color=fff" alt="律师简介" class="profile-img">
         <h3>陆明 律师</h3>
         <p style="text-align: center; color: var(--gold); font-weight: bold; font-size: 0.8em;">国际商事纠纷调解员</p>
         <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
         <p><strong>核心领域：</strong>专注于 B2B 制造业出口合规、跨境账款催收及国际仲裁。</p>
-        <p><strong>执业信条：</strong>为中国制造出海创造确定性的风控闭环。</p>
         <a href="mailto:futureming3998@gmail.com" class="contact-btn">获取跨境风控内参</a>
     </aside>
 </div>
 
-<footer style="text-align: center; padding: 60px 0; font-size: 0.75em; color: #999; letter-spacing: 1px;">
+<footer style="text-align: center; padding: 60px 0; font-size: 0.8em; color: #7f8c8d;">
     © 2026 FUTUREMING LEGAL SOLUTIONS | GLOBAL COMPLIANCE
 </footer>
 
