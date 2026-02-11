@@ -6,12 +6,14 @@
     <title>制造业全球化布局 | 出海法务对冲策略</title>
     <style>
         :root { 
-            --ocean-blue: #0f203d; /* 深海蓝：比纯黑更灵动，比浅蓝更稳重 */
-            --gold: #b89a6b;       /* 哑光金：高贵而不刺眼 */
-            --text-main: #34495e;  /* 深蓝灰色：缓解纯黑的压抑感 */
+            --ocean-blue: #0f203d; /* 深海蓝 */
+            --gold: #b89a6b;       /* 哑光金 */
+            --text-main: #34495e;  /* 深蓝灰色 */
             --bg-light: #f5f7fa;   /* 极浅蓝灰背景 */
         }
         
+        html { scroll-behavior: smooth; } /* 平滑滚动 */
+
         body { 
             font-family: "Charter", "Georgia", "PingFang SC", serif; 
             line-height: 1.85; 
@@ -23,12 +25,12 @@
         /* 顶部深海蓝 Header */
         header { 
             background: var(--ocean-blue); 
-            padding: 40px 0; 
+            padding: 50px 0; 
             border-bottom: 4px solid var(--gold);
             text-align: center;
         }
         .site-title { 
-            font-size: 1.8em; 
+            font-size: 2em; 
             letter-spacing: 3px; 
             color: #ffffff; 
             font-weight: bold; 
@@ -37,31 +39,55 @@
         }
         .site-subtitle {
             color: var(--gold);
-            font-size: 0.9em;
+            font-size: 1em;
             margin-top: 10px;
             letter-spacing: 1px;
+            font-weight: bold;
         }
+
+        /* 交互导航条 */
+        nav {
+            background: #ffffff;
+            padding: 12px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eee;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--ocean-blue);
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover { color: var(--gold); }
 
         .wrapper { 
-            max-width: 1100px; 
+            max-width: 1150px; 
             margin: 0 auto; 
             display: grid; 
-            grid-template-columns: 1fr 300px; 
+            grid-template-columns: 1fr 320px; 
             gap: 50px; 
-            padding: 60px 20px; 
+            padding: 40px 20px; 
         }
 
-        /* 正文区域样式优化 */
+        /* 正文区域 */
         .main-content { 
             background: white; 
             padding: 50px 60px; 
             border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(15, 32, 61, 0.05); /* 淡淡的蓝影 */
+            box-shadow: 0 4px 20px rgba(15, 32, 61, 0.05);
         }
 
+        article { margin-bottom: 100px; }
+        
         h1 { 
-            font-size: 2.2em; 
-            line-height: 1.4; 
+            font-size: 2.1em; 
+            line-height: 1.3; 
             color: var(--ocean-blue); 
             margin-bottom: 15px;
         }
@@ -74,63 +100,67 @@
             border-left: 3px solid var(--gold);
             padding-left: 10px;
             margin-bottom: 40px;
+            display: inline-block;
         }
 
         h2 { 
-            font-size: 1.35em; 
+            font-size: 1.4em; 
             color: var(--ocean-blue); 
             margin-top: 50px; 
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
         }
 
-        /* 法律内参 Highlight Box */
         .insight-box { 
             background: #f0f4f8; 
-            border-left: 4px solid var(--ocean-blue); 
+            border-left: 5px solid var(--ocean-blue); 
             padding: 25px 30px; 
             margin: 35px 0; 
             font-style: italic; 
             color: #2c3e50;
         }
 
+        ul li { margin-bottom: 12px; }
         ul li strong { color: var(--ocean-blue); }
 
         /* 侧边栏 */
         .sidebar { 
             background: white; 
-            padding: 35px 25px; 
+            padding: 40px 25px; 
             border-radius: 4px;
             height: fit-content; 
             position: sticky; 
-            top: 40px;
-            border-top: 5px solid var(--ocean-blue);
+            top: 80px;
+            border-top: 5px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
         .profile-img { 
-            width: 100px; height: 100px; 
+            width: 110px; height: 110px; 
             border-radius: 50%; 
             margin: 0 auto 20px; 
             display: block; 
-            border: 2px solid var(--bg-light);
+            border: 3px solid var(--bg-light);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .sidebar h3 { font-size: 1.2em; color: var(--ocean-blue); text-align: center; }
+        .sidebar h3 { font-size: 1.25em; color: var(--ocean-blue); text-align: center; margin-bottom: 5px; }
         
         .contact-btn { 
             display: block; text-align: center; 
             background: var(--ocean-blue); color: white; 
-            padding: 14px; text-decoration: none; 
+            padding: 15px; text-decoration: none; 
             border-radius: 4px;
             margin-top: 25px; font-weight: bold;
             transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(15, 32, 61, 0.2);
         }
         .contact-btn:hover { background: var(--gold); transform: translateY(-2px); }
 
-        #giscus-container { margin-top: 60px; padding-top: 40px; }
+        footer { text-align: center; padding: 60px 0; font-size: 0.8em; color: #7f8c8d; }
 
         @media (max-width: 850px) { 
             .wrapper { grid-template-columns: 1fr; } 
-            .main-content { padding: 30px 20px; }
+            .main-content { padding: 40px 25px; }
+            nav a { margin: 0 8px; font-size: 0.8em; }
         }
     </style>
 </head>
@@ -141,11 +171,17 @@
     <div class="site-subtitle">制造业出海法盾 · 跨境风控决策内参</div>
 </header>
 
+<nav>
+    <a href="#contract-risk">合同风险对冲</a>
+    <a href="#quality-dispute">质量拒付反制</a>
+    <a href="mailto:futureming3998@gmail.com">预约专业咨询</a>
+</nav>
+
 <div class="wrapper">
     <main class="main-content">
-        <article>
+        <article id="contract-risk">
             <h1>制造业全球化布局：出口合同中的高阶风险对冲策略</h1>
-            <div class="meta-info">2026 February · B2B Special Report</div>
+            <div class="meta-info">2026 February · 跨境风控专题 (一)</div>
 
             <p>在复杂的全球博弈环境下，中国 B2B 制造企业的竞争核心已从“产能”转向“规则”。合同不仅是交易凭证，更是保护资产安全的最后防线。</p>
 
@@ -172,67 +208,52 @@
                 <li><strong>中立管辖：</strong> 坚持第三方中立裁决，拒绝买方本国司法管辖。</li>
             </ul>
         </article>
-<hr style="border: 0; border-top: 1px solid #eee; margin: 80px 0;">
 
-<article>
-    <h1>反制海外客户“质量恶意拒付”：制造业工厂的证据链闭环实务</h1>
-    <div class="meta-info">2026 February · 跨境债权保护专题</div>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0 80px;">
 
-    <p>在 B2B 贸易中，最令工厂头疼的不是买方没钱，而是买方以“质量缺陷”为借口恶意拒付。这种套路往往发生在货到目的港、市场价格下跌或买方资金周转不灵时。</p>
+        <article id="quality-dispute">
+            <h1>反制海外客户“质量恶意拒付”：制造业工厂的证据链闭环实务</h1>
+            <div class="meta-info">2026 February · 跨境风控专题 (二)</div>
 
-    <h2>一、 质量争议中的“举证责任陷阱”</h2>
-    <p>很多工厂习惯于“谁主张谁举证”的思维，认为买方说质量不好就得买方拿证据。但在许多国家的商法实践中，一旦买方在法定期限内发出不符通知，举证责任往往会反弹回工厂身上。</p>
+            <p>在 B2B 贸易中，最令工厂头疼的不是买方没钱，而是买方以“质量缺陷”为借口恶意拒付。这种套路往往发生在货到目的港、市场价格下跌或买方资金周转不灵时。</p>
 
-    <div class="insight-box">
-        <strong>核心痛点：</strong>一旦货物进入买方仓库，工厂便失去了对物证的物理控制权。买方可以挑选瑕疵样本拍照，甚至人为制造“损毁”来申请仲裁。
-    </div>
+            <h2>一、 质量争议中的“举证责任陷阱”</h2>
+            <p>很多工厂习惯于“谁主张谁举证”的思维，认为买方说质量不好就得买方拿证据。但在许多国家的商法实践中，一旦买方在法定期限内发出不符通知，举证责任往往会反弹回工厂身上。</p>
 
-    <h2>二、 构建“不可逆”的装船前证据链</h2>
-    <p>要反制恶意拒付，必须在货权转移前完成证据固化：</p>
-    <ul>
-        <li><strong>第三方监装：</strong> 引入 SGS 或 Intertek 等中立机构进行装船前检验（PSI）。虽然有成本，但其报告在国际仲裁中具有近乎“不可撤销”的证据效力。</li>
-        <li><strong>影像存证标准化：</strong> 不只是拍几张照片。应拍摄包含“封条编号、集装箱号、货物批次、防震包装细节”的全程不间断视频，并进行云端时间戳同步。</li>
-    </ul>
+            <div class="insight-box">
+                <strong>核心痛点：</strong>一旦货物进入买方仓库，工厂便失去了对物证的物理控制权。买方可以挑选瑕疵样本拍照，甚至人为制造“损毁”来申请仲裁。
+            </div>
 
-    <h2>三、 合同中的“瑕疵异议期”防线</h2>
-    <p>在合同中必须锁死买方挑刺的时间窗口：</p>
-    <div class="insight-box">
-        <strong>高阶条款建议：</strong>约定“严格异议期”。例如：货到港后 7 天内未提出书面异议并提供第三方权威检测报告的，视为质量完全合格且买方放弃所有索赔权。
-    </div>
-    <ul>
-        <li><strong>拒付门槛：</strong> 约定即使存在轻微瑕疵，买方也无权中止全额货款的支付，争议部分通过后续索赔解决，实现“先付后议”。</li>
-    </ul>
-</article>
-        <div id="giscus-container">
-             <script src="https://giscus.app/client.js"
-                data-repo="futureming3998-create/futureming3998-create.github.io"
-                data-repo-id="R_kgDORMqXO8"
-                data-category="Announcements"
-                data-category-id="DIC_kwDORMqXO84C2H4f"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="light"
-                data-lang="zh-CN"
-                crossorigin="anonymous"
-                async>
-            </script>
-        </div>
+            <h2>二、 构建“不可逆”的装船前证据链</h2>
+            <p>要反制恶意拒付，必须在货权转移前完成证据固化：</p>
+            <ul>
+                <li><strong>第三方监装：</strong> 引入 SGS 或 Intertek 等中立机构进行装船前检验（PSI）。虽然有成本，但其报告在国际仲裁中具有近乎“不可撤销”的证据效力。</li>
+                <li><strong>影像存证标准化：</strong> 应拍摄包含“封条编号、集装箱号、货物批次、防震包装细节”的全程不间断视频，并进行云端时间戳同步。</li>
+            </ul>
+
+            <h2>三、 合同中的“瑕疵异议期”防线</h2>
+            <p>在合同中必须锁死买方挑刺的时间窗口：</p>
+            <div class="insight-box">
+                <strong>高阶条款建议：</strong>约定“严格异议期”。例如：货到港后 7 天内未提出书面异议并提供第三方权威检测报告的，视为质量完全合格且买方放弃所有索赔权。
+            </div>
+            <ul>
+                <li><strong>先付后议：</strong> 约定即使存在轻微瑕疵，买方也无权中止主货款的支付，争议部分通过后续仲裁或索赔解决。</li>
+            </ul>
+        </article>
     </main>
 
     <aside class="sidebar">
         <img src="https://ui-avatars.com/api/?name=Lawyer+Lu&background=0f203d&color=fff" alt="律师简介" class="profile-img">
         <h3>陆明 律师</h3>
-        <p style="text-align: center; color: var(--gold); font-weight: bold; font-size: 0.8em;">国际商事纠纷调解员</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <p style="text-align: center; color: var(--gold); font-weight: bold; font-size: 0.85em; margin-top: 0;">国际商事纠纷调解员</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
         <p><strong>核心领域：</strong>专注于 B2B 制造业出口合规、跨境账款催收及国际仲裁。</p>
+        <p><strong>执业信条：</strong>为中国制造出海建立确定性的法务风控闭环。</p>
         <a href="mailto:futureming3998@gmail.com" class="contact-btn">获取跨境风控内参</a>
     </aside>
 </div>
 
-<footer style="text-align: center; padding: 60px 0; font-size: 0.8em; color: #7f8c8d;">
+<footer>
     © 2026 FUTUREMING LEGAL SOLUTIONS | GLOBAL COMPLIANCE
 </footer>
 
