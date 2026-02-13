@@ -30,7 +30,6 @@
         .site-title { font-size: 2em; letter-spacing: 3px; color: #ffffff; font-weight: bold; text-transform: uppercase; margin: 0; }
         .site-subtitle { color: var(--gold); font-size: 1em; margin-top: 10px; font-weight: bold; }
 
-        /* 顶部导航：支持三篇文章跳转 */
         nav {
             background: #ffffff;
             padding: 12px 0;
@@ -55,17 +54,26 @@
 
         .main-content { background: white; padding: 50px 60px; border-radius: 4px; box-shadow: 0 4px 20px rgba(15, 32, 61, 0.05); }
 
-        article { margin-bottom: 100px; }
+        article { margin-bottom: 60px; }
         h1 { font-size: 2.1em; line-height: 1.3; color: var(--ocean-blue); margin-bottom: 15px; }
         .meta-info { 
             font-size: 0.8em; color: var(--gold); font-weight: bold; text-transform: uppercase; 
             border-left: 3px solid var(--gold); padding-left: 10px; margin-bottom: 30px; display: inline-block;
         }
 
-        h2 { font-size: 1.4em; color: var(--ocean-blue); margin-top: 45px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        /* 修正点：移除文章内部标题下的横线 */
+        h2 { 
+            font-size: 1.45em; 
+            color: var(--ocean-blue); 
+            margin-top: 45px; 
+            margin-bottom: 20px;
+            padding-bottom: 0; 
+            border-bottom: none; /* 彻底移除横线 */
+        }
+
         .insight-box { background: #f0f4f8; border-left: 5px solid var(--ocean-blue); padding: 25px 30px; margin: 30px 0; font-style: italic; color: #2c3e50; }
 
-        ul li { margin-bottom: 10px; }
+        ul li { margin-bottom: 12px; }
         ul li strong { color: var(--ocean-blue); }
 
         .sidebar { 
@@ -82,6 +90,9 @@
         .contact-btn:hover { background: var(--gold); transform: translateY(-2px); }
 
         footer { text-align: center; padding: 60px 0; font-size: 0.8em; color: #7f8c8d; }
+
+        /* 文章之间的长分割线 */
+        .article-divider { border: 0; border-top: 1px solid #eee; margin: 80px 0; }
 
         @media (max-width: 850px) { .wrapper { grid-template-columns: 1fr; } .main-content { padding: 40px 25px; } nav a { margin: 0 8px; font-size: 0.75em; } }
     </style>
@@ -106,45 +117,38 @@
             <h1>制造业全球化布局：出口合同中的高阶风险对冲策略</h1>
             <div class="meta-info">Topic 01 · 风险对冲</div>
             <p>在复杂的全球博弈环境下，合同是保护资产安全的最后防线。建议 B2B 企业优先考虑 CIF 术语以掌控物权凭证，并明确“所有权保留”条款。</p>
-            <div class="insight-box">
-                <strong>核心观点：</strong>货权不随离港自动转移。通过合同锁定付款节点与物权解控的逻辑关联，是防范坏账的第一道锁。
-            </div>
         </article>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 60px 0;">
+        <hr class="article-divider">
 
         <article id="art2">
             <h1>反制海外客户“质量恶意拒付”：证据链闭环实务</h1>
             <div class="meta-info">Topic 02 · 证据固化</div>
             <p>面对恶意拒付，工厂应引入第三方监装（PSI）并拍摄标准化视频，同时在合同中锁死“严格异议期”，实现先付后议。</p>
-            <ul>
-                <li><strong>影像标准化：</strong> 必须包含封条号与货物批次的连续性。</li>
-                <li><strong>时间窗口：</strong> 约定货到港 7 天内为唯一异议期。</li>
-            </ul>
         </article>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 60px 0;">
+        <hr class="article-divider">
 
         <article id="art3">
             <h1>跨境追债的“深水炸弹”：为何 B2B 企业应首选国际仲裁？</h1>
             <div class="meta-info">Topic 03 · 全球强制执行</div>
 
-            <p>当欠款已成事实，去买方所在地的法院诉讼往往面临“主场劣势”与“判决执行难”。对于中国 B2B 制造企业而言，<strong>国际仲裁</strong>才是真正的跨境追债利器。</p>
+            <p>当欠款已成事实，去买方所在地的法院诉讼往往面临“主场劣势”。对于中国 B2B 制造企业而言，<strong>国际仲裁</strong>才是真正的跨境追债利器。</p>
 
             <h2>一、 跨境诉讼的执行死胡同</h2>
-            <p>由于许多国家与中国并未签署民事判决互认协议，国内或买方当地的法院判决书在跨国执行时难度极大。而国际仲裁则受《纽约公约》保护，可在全球 170 多个国家直接申请强制执行。</p>
+            <p>由于许多国家与中国并未签署民事判决互认协议，法院判决书在跨国执行时难度极大。而国际仲裁则受《纽约公约》保护，可在全球 170 多个国家直接申请强制执行。</p>
 
             <h2>二、 锁定 HKIAC 与 SIAC 的战略意义</h2>
             <div class="insight-box">
-                <strong>实务核实：</strong>香港国际仲裁中心（HKIAC）与新加坡国际仲裁中心（SIAC）是全球商事纠纷解决的“金标准”。它们在处理 B2B 贸易、海事及跨境投资领域具有极高的公信力。
+                <strong>实务建议：</strong>香港国际仲裁中心（HKIAC）与新加坡国际仲裁中心（SIAC）处理跨境 B2B 纠纷具有极高的公信力。
             </div>
             <ul>
-                <li><strong>HKIAC 优势：</strong> 唯一可直接向中国内地法院申请财产保全的境外机构。</li>
-                <li><strong>SIAC 优势：</strong> 程序极速透明，适合追求效率的 B2B 债权追索。</li>
+                <li><strong>HKIAC：</strong> 可直接向中国内地法院申请财产保全。</li>
+                <li><strong>SIAC：</strong> 程序极速透明，适合追求效率的债权追索。</li>
             </ul>
 
             <h2>三、 合同条款的“引信”预埋</h2>
-            <p>在争议解决条款中明确锁定仲裁机构，并约定适用“简易程序”，能将维权时间缩短 50% 以上。坚持“一裁终局”，杜绝买方通过反复上诉拖延支付。</p>
+            <p>在争议解决条款中明确锁定仲裁机构，并约定适用“简易程序”，能将维权时间缩短 50% 以上。坚持“一裁终局”，杜绝买方拖延支付。</p>
         </article>
     </main>
 
@@ -153,7 +157,7 @@
         <h3>陆明 律师</h3>
         <p style="text-align: center; color: var(--gold); font-weight: bold; font-size: 0.85em; margin-top: 0;">国际商事纠纷调解员</p>
         <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        <p>专注于 B2B 制造业出口合规、跨境账款催收及国际仲裁。致力于为中国制造建立确定性的风险闭环。</p>
+        <p>专注于 B2B 制造业出口合规、跨境账款催收及国际仲裁。</p>
         <a href="mailto:futureming3998@gmail.com" class="contact-btn">获取跨境风控内参</a>
     </aside>
 </div>
