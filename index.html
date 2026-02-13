@@ -10,6 +10,7 @@
             --ocean-blue: #0f203d; 
             --gold: #b89a6b;       
             --text-main: #34495e;  
+            --text-muted: #5d6d7e; /* 摘要使用的淡色 */
             --bg-light: #f5f7fa;   
         }
         html { scroll-behavior: smooth; }
@@ -55,46 +56,66 @@
         .main-content { background: white; padding: 50px 60px; border-radius: 4px; box-shadow: 0 4px 20px rgba(15, 32, 61, 0.05); }
 
         article { margin-bottom: 60px; }
-        h1 { font-size: 2.1em; line-height: 1.3; color: var(--ocean-blue); margin-bottom: 15px; }
+        h1 { font-size: 2.1em; line-height: 1.3; color: var(--ocean-blue); margin-bottom: 10px; }
         .meta-info { 
             font-size: 0.8em; color: var(--gold); font-weight: bold; text-transform: uppercase; 
-            border-left: 3px solid var(--gold); padding-left: 10px; margin-bottom: 30px; display: inline-block;
+            border-left: 3px solid var(--gold); padding-left: 10px; margin-bottom: 20px; display: inline-block;
         }
 
-        /* 修正点：移除文章内部标题下的横线 */
+        /* 摘要区：去掉了斜体，优化了字号和颜色 */
+        .article-summary-box {
+            background-color: #fcfdfe;
+            border: 1px solid #f0f3f7;
+            padding: 22px 25px;
+            margin-bottom: 35px;
+            border-radius: 4px;
+        }
+        .summary-text {
+            color: var(--text-muted);
+            font-size: 0.9em; /* 更小的字号 */
+            line-height: 1.7;
+            margin-bottom: 15px;
+            /* 已移除斜体 */
+        }
+        .highlights-labels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .highlight-tag {
+            background: rgba(184, 154, 107, 0.12);
+            color: var(--gold);
+            font-size: 0.75em;
+            padding: 3px 12px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+
         h2 { 
             font-size: 1.45em; 
             color: var(--ocean-blue); 
-            margin-top: 45px; 
-            margin-bottom: 20px;
-            padding-bottom: 0; 
-            border-bottom: none; /* 彻底移除横线 */
+            margin-top: 40px; 
+            margin-bottom: 15px;
+            border-bottom: none; 
         }
 
         .insight-box { background: #f0f4f8; border-left: 5px solid var(--ocean-blue); padding: 25px 30px; margin: 30px 0; font-style: italic; color: #2c3e50; }
-
-        ul li { margin-bottom: 12px; }
-        ul li strong { color: var(--ocean-blue); }
 
         .sidebar { 
             background: white; padding: 40px 25px; border-radius: 4px; height: fit-content; 
             position: sticky; top: 80px; border-top: 5px solid var(--gold);
         }
-        .profile-img { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px; display: block; border: 3px solid var(--bg-light); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .sidebar h3 { font-size: 1.25em; color: var(--ocean-blue); text-align: center; margin-bottom: 5px; }
-        
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px; display: block; border: 3px solid var(--bg-light); }
         .contact-btn { 
             display: block; text-align: center; background: var(--ocean-blue); color: white; 
             padding: 15px; text-decoration: none; border-radius: 4px; margin-top: 25px; font-weight: bold; transition: 0.3s;
         }
-        .contact-btn:hover { background: var(--gold); transform: translateY(-2px); }
+        .contact-btn:hover { background: var(--gold); }
 
         footer { text-align: center; padding: 60px 0; font-size: 0.8em; color: #7f8c8d; }
+        .article-divider { border: 0; border-top: 1px solid #eee; margin: 60px 0; }
 
-        /* 文章之间的长分割线 */
-        .article-divider { border: 0; border-top: 1px solid #eee; margin: 80px 0; }
-
-        @media (max-width: 850px) { .wrapper { grid-template-columns: 1fr; } .main-content { padding: 40px 25px; } nav a { margin: 0 8px; font-size: 0.75em; } }
+        @media (max-width: 850px) { .wrapper { grid-template-columns: 1fr; } .main-content { padding: 40px 25px; } }
     </style>
 </head>
 <body>
@@ -105,9 +126,9 @@
 </header>
 
 <nav>
-    <a href="#art1">合同风险对冲</a>
-    <a href="#art2">质量拒付反制</a>
-    <a href="#art3">国际仲裁追债</a>
+    <a href="#art1">风险对冲</a>
+    <a href="#art2">拒付反制</a>
+    <a href="#art3">追债仲裁</a>
     <a href="mailto:futureming3998@gmail.com">预约咨询</a>
 </nav>
 
@@ -115,7 +136,17 @@
     <main class="main-content">
         <article id="art1">
             <h1>制造业全球化布局：出口合同中的高阶风险对冲策略</h1>
-            <div class="meta-info">Topic 01 · 风险对冲</div>
+            <div class="meta-info">Topic 01 · 风险管理</div>
+            
+            <div class="article-summary-box">
+                <div class="summary-text">本文深度解析 B2B 贸易合同中容易被忽视的所有权与运费漏洞，旨在帮助工厂在动荡的全球供应链中重新掌握货物控制权。</div>
+                <div class="highlights-labels">
+                    <span class="highlight-tag">CIF术语优选</span>
+                    <span class="highlight-tag">所有权保留条款</span>
+                    <span class="highlight-tag">运费风险分摊</span>
+                </div>
+            </div>
+
             <p>在复杂的全球博弈环境下，合同是保护资产安全的最后防线。建议 B2B 企业优先考虑 CIF 术语以掌控物权凭证，并明确“所有权保留”条款。</p>
         </article>
 
@@ -124,6 +155,16 @@
         <article id="art2">
             <h1>反制海外客户“质量恶意拒付”：证据链闭环实务</h1>
             <div class="meta-info">Topic 02 · 证据固化</div>
+
+            <div class="article-summary-box">
+                <div class="summary-text">揭秘海外买家常见的“质量陷阱”套路，详述如何通过第三方监装与标准化影像存证，构建法律层面的“不坏金身”。</div>
+                <div class="highlights-labels">
+                    <span class="highlight-tag">第三方监装(PSI)</span>
+                    <span class="highlight-tag">装船影像存证</span>
+                    <span class="highlight-tag">7天严格异议期</span>
+                </div>
+            </div>
+
             <p>面对恶意拒付，工厂应引入第三方监装（PSI）并拍摄标准化视频，同时在合同中锁死“严格异议期”，实现先付后议。</p>
         </article>
 
@@ -131,12 +172,21 @@
 
         <article id="art3">
             <h1>跨境追债的“深水炸弹”：为何 B2B 企业应首选国际仲裁？</h1>
-            <div class="meta-info">Topic 03 · 全球强制执行</div>
+            <div class="meta-info">Topic 03 · 债权执行</div>
+
+            <div class="article-summary-box">
+                <div class="summary-text">对比分析跨境诉讼与仲裁的执行力差异，解析《纽约公约》如何赋能中国制造企业在全球范围内快速锁定并扣押债务人资产。</div>
+                <div class="highlights-labels">
+                    <span class="highlight-tag">纽约公约执行</span>
+                    <span class="highlight-tag">HKIAC/SIAC选配</span>
+                    <span class="highlight-tag">一裁终局</span>
+                </div>
+            </div>
 
             <p>当欠款已成事实，去买方所在地的法院诉讼往往面临“主场劣势”。对于中国 B2B 制造企业而言，<strong>国际仲裁</strong>才是真正的跨境追债利器。</p>
 
             <h2>一、 跨境诉讼的执行死胡同</h2>
-            <p>由于许多国家与中国并未签署民事判决互认协议，法院判决书在跨国执行时难度极大。而国际仲裁则受《纽约公约》保护，可在全球 170 多个国家直接申请强制执行。</p>
+            <p>由于许多国家与中国并未签署民事判决互认协议，判决书在跨国执行时难度极大。而国际仲裁则受《纽约公约》保护，可在全球 170 多个国家直接申请强制执行。</p>
 
             <h2>二、 锁定 HKIAC 与 SIAC 的战略意义</h2>
             <div class="insight-box">
